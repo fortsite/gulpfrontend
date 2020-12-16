@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const script = require("./tasks/scripts");
 const fonts = require("./tasks/fonts");
-const vendors = require("./tasks/vendorsJS");
+// const vendors = require("./tasks/vendorsJS");
 const imageMinify = require("./tasks/imageMinify");
 const styles = require("./tasks/styles");
 const clean = require("./tasks/clean");
@@ -13,7 +13,7 @@ const spritePNG = require("./tasks/spritePNG");
 const dev = gulp.parallel(
   pug2html,
   script,
-  vendors,
+  // vendors,
   styles,
   imageMinify,
   spriteSVG,

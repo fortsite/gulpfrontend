@@ -21,23 +21,23 @@ module.exports = function serve(cb) {
 
   gulp
     .watch(
-      "src/assets/images/*/*.{gif,png,jpg,svg,webp}",
+      "src/assets/img/*/*.{gif,png,jpg,svg,webp}",
       gulp.series(imageMinify)
     )
     .on("change", server.reload);
   gulp
-    .watch("src/assets/images/sprite/svg/*.svg", gulp.series(svgSprite))
+    .watch("src/assets/img/sprite/svg/*.svg", gulp.series(svgSprite))
     .on("change", server.reload);
   gulp
-    .watch("src/assets/images/sprite/png/*.png", gulp.series(pngSprite))
+    .watch("src/assets/img/sprite/png/*.png", gulp.series(pngSprite))
     .on("change", server.reload);
   gulp
-    .watch("src/assets/styles/**/*.scss", gulp.series(styles))
+    .watch("src/assets/scss/**/*.scss", gulp.series(styles))
     .on("change", server.reload);
   gulp
     .watch("src/assets/js/**/*.js", gulp.series(script))
     .on("change", server.reload);
-  gulp.watch("src/pug/**/*.pug", gulp.series(pug2html));
+  gulp.watch("src/views/**/*.pug", gulp.series(pug2html));
   gulp.watch("dist/*.html").on("change", server.reload);
 
   return cb();

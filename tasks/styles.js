@@ -11,7 +11,7 @@ const gulpif = require("gulp-if");
 
 module.exports = function styles() {
   return gulp
-    .src("serc/assets/scss/main.scss")
+    .src("src/assets/scss/main.scss")
     .pipe(plumber())
     .pipe(gulpif(!argv.prod, sourcemaps.init()))
     .pipe(scss())
