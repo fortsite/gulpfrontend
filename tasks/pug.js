@@ -4,7 +4,7 @@ const plumber = require("gulp-plumber");
 const pug = require("gulp-pug");
 const argv = require("yargs").argv;
 const gulpif = require("gulp-if");
-
+const webphtml = require("gulp-webp-html");
 // Преобразуем Pug в HTML
 
 module.exports = function pug2html() {
@@ -14,5 +14,6 @@ module.exports = function pug2html() {
     .pipe(pug())
     .pipe(plumber.stop())
     .pipe(gulpif(argv.prod, htmlValidator()))
+    .pipe(webphtml())
     .pipe(gulp.dest("dist"));
 };
