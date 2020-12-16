@@ -5,5 +5,20 @@ block variables
 
 block content
     h1 Frontend 
+    //- Иконки можнно вставить двумя способами
+    //- 1.
     +icon('twitter')
+    //- 2.
+    svg.svg-sprite-icon.icon-facebook
+        use(xlink:href="assets/img/sprite/symbol/sprite.svg#facebook")
+
+    //- картики вствляются как обычно, но
     img(src="assets/img/common/dog.jpg" alt="dog" width="400px")
+    //- на выхоже мы получаем 
+    //- <picture>
+    //-     <source srcset="assets/img/common/dog.webp" type="image/webp">
+    //-     <img src="assets/img/common/dog.jpg" alt="dog" width="400px">
+    //- </picture>
+
+
+
