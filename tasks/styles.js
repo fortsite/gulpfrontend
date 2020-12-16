@@ -37,6 +37,6 @@ module.exports = function styles() {
         )
       )
     )
-    .pipe(gulpif(!argv.prod, sourcemaps.write()))
+    .pipe(gulpif(!argv.prod, sourcemaps.write(".")))
     .pipe(gulp.dest("dist/assets/css"));
 };

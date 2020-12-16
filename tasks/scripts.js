@@ -38,9 +38,9 @@ module.exports = function script() {
         },
       })
     )
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(!argv.prod, sourcemaps.init()))
     .pipe(gulpif(argv.prod, uglify().on("error", notify.onError())))
-    .pipe(sourcemaps.write("."))
+    .pipe(gulpif(!argv.prod, sourcemaps.write(".")))
     .pipe(gulp.dest("./dist/assets/js"))
     .pipe(browserSync.stream());
 };
