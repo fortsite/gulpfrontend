@@ -18,6 +18,7 @@ module.exports = function script() {
     .src("./src/assets/js/main.js")
     .pipe(
       webpackStream({
+        mode: "development",
         output: {
           filename: "main.js",
         },
