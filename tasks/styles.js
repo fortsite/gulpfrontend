@@ -14,7 +14,11 @@ module.exports = function styles() {
     .src("src/assets/scss/main.scss")
     .pipe(plumber())
     .pipe(gulpif(!argv.prod, sourcemaps.init()))
-    .pipe(scss())
+    .pipe(
+      scss({
+        outputStyle: "expanded",
+      })
+    )
     .pipe(
       autoprefixer({
         overrideBrowserslist: ["last 4 version"],
